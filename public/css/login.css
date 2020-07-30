@@ -1,0 +1,155 @@
+.login-content {
+    background-color: transparent;
+    padding: 2rem 2rem;
+    top: 3rem;
+    bottom: 4rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+@media( min-width:340px ){
+    .login-content {
+        margin-left: 20px;
+        margin-right: 20px;
+        min-width: 320px;
+    }
+}
+
+
+
+/*------------------------------------
+    LOGIN HEADER
+------------------------------------*/
+.login-header {
+    padding-bottom: 1rem;
+}
+.login-header h4 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 1.5rem;
+}
+.login-header img {
+    height: 70px;
+    width: 70px;
+    margin-bottom: 1.5rem;
+}
+
+.login-header button {
+    background-color: transparent;
+    font-size: 15px;
+    border-radius: 8px;
+    border: 1px solid #303030;
+    padding: 0.350rem 0;
+    transition: .25s;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.login-header button:hover {
+    transform: scale(1.02);
+}
+.login-header button img{
+    height: 27px;
+    width: 27px;
+    margin: 0;
+}
+
+
+
+/*------------------------------------
+    LOGIN BODY
+------------------------------------*/
+.login-body {
+    padding-top: .650rem;
+}
+.form-group img {
+    height: 20px;
+    width: 20px;
+    margin-top: 7px;
+}
+.form-control , .form-control:hover , .form-control:focus , .form-control:active {
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+}
+.form-control::placeholder{
+    color: #505050;
+    font-weight: 500;
+}
+.input-group {
+    padding: 0 7px;
+    border-width: 0 0 2px 0;
+    border-style: solid;
+    border-radius: 0;
+    border-color: #aaa;
+    transition: all 0.15s;
+}
+.input-group:hover {
+    border-color: #008cff;
+}
+.form-group a {
+    margin-top: 8px;
+}
+.login-body .form-group input[type=checkbox] {
+    background-color: #cecece;
+    height: 12px;
+    width: 12px;
+}
+.login-body button {
+    margin-top: 2rem;
+    font-size: 19px;
+    font-weight: 600;
+    word-spacing: .01rem;
+}
+
+
+/*------------------------------------
+    LOGIN FOOTER
+------------------------------------*/
+.login-footer {
+    padding-top: .750rem;
+    border-width: 1px 0 0 0;
+    border-radius: 0;
+    border-style: solid;
+    border-color: #aaa
+}
+.login-footer a {
+    font-weight: 750;
+    font-size: 18px;
+    word-spacing: 0.05rem;
+}
+
+
+/*------------------------------------
+    PAGE FOOTER
+------------------------------------*/
+footer {
+    padding-top: 2rem;
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+footer a {
+    color: #707070;
+    font-size: 13px;
+    font-weight: 550;
+    letter-spacing: 0.050rem;
+}
+footer a:hover {
+    text-decoration: none;
+    color: #008cff;
+    border-width: 0 0 2px 0;
+    border-style: solid;
+    border-color: #008cff;
+}
+
+footer .terms li {
+    display: inline;
+}
+footer .terms li:not(:last-child) {
+    border-width: 0 1px 0 0;
+    border-color: #707070;
+    border-style: solid;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+.footer .terms li:last-child {
+    padding-left: 0.5rem;
+    padding-right: 0;
+}
