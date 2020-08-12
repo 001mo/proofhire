@@ -1,14 +1,17 @@
 .login-content {
-    background-color: transparent;
-    padding: 2rem 2rem;
-    top: 3rem;
-    bottom: 4rem;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 7px;
+    border-color: transparent;
+    padding: 1rem 2rem 0 2rem;
+    margin: 1rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* box-shadow: 0 0 .4rem .450rem rgba(200, 200, 200, 0.4); */
 }
-@media( min-width:340px ){
+@media(min-width: 340px){
     .login-content {
-        margin-left: 20px;
-        margin-right: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
         min-width: 320px;
     }
 }
@@ -19,85 +22,134 @@
     LOGIN HEADER
 ------------------------------------*/
 .login-header {
-    padding-bottom: 1rem;
+    padding-bottom: .6rem;
 }
 .login-header h4 {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin-bottom: 1.5rem;
+    color: #303030;
+    font-size: 32px;
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 1.250rem;
 }
-.login-header img {
+.login-header svg {
     height: 70px;
     width: 70px;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
+
 
 .login-header button {
     background-color: transparent;
     font-size: 15px;
+    font-weight: 500;
+    color: #303030;
     border-radius: 8px;
     border: 1px solid #303030;
     padding: 0.350rem 0;
     transition: .25s;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+    outline: none;
 }
+
 .login-header button:hover {
-    transform: scale(1.02);
+    transform: scale(1.01);
 }
-.login-header button img{
+.login-header button svg {
     height: 27px;
     width: 27px;
     margin: 0;
 }
-
+.login-header .or {
+    font-size: 17px;
+    font-weight: 500;
+    color: #505050;
+    position: relative;
+    margin-top: 1rem;
+}
+.login-header .or ::before{
+    content: "";
+    display: block;
+    width: 44%;
+    height: 1px;
+    left: 1px;
+    top: 50%;
+    background: #aaaaaa;
+    position: absolute;
+}
+.login-header .or ::after{
+    content: "";
+    display: block;
+    width: 44%;
+    height: 1px;
+    right: 1px;
+    top: 50%;
+    background: #aaaaaa;
+    position: absolute;
+}
 
 
 /*------------------------------------
     LOGIN BODY
 ------------------------------------*/
 .login-body {
-    padding-top: .650rem;
+    padding-top: .5rem;
 }
-.form-group img {
-    height: 20px;
-    width: 20px;
-    margin-top: 7px;
+.login-body a {
+    font-size: 13px;
 }
+
+
 .form-control , .form-control:hover , .form-control:focus , .form-control:active {
     background-color: transparent;
     box-shadow: none;
     border: none;
+    color: #000000;
 }
 .form-control::placeholder{
     color: #505050;
-    font-weight: 500;
 }
-.input-group {
+
+
+.input-group:not(.exception) {
     padding: 0 7px;
     border-width: 0 0 2px 0;
     border-style: solid;
     border-radius: 0;
-    border-color: #aaa;
-    transition: all 0.15s;
-}
-.input-group:hover {
     border-color: #008cff;
+    transition: 250ms;
 }
-.form-group a {
-    margin-top: 8px;
+
+
+.input-group svg {
+    height: 20px;
+    width: 20px;
+    margin-top: 9px;
 }
-.login-body .form-group input[type=checkbox] {
-    background-color: #cecece;
-    height: 12px;
-    width: 12px;
+
+.input-group button#eyes {
+    border: none;
+    padding: 0;
+    margin: 0 0 7px 0;
+    background-color: transparent;
 }
-.login-body button {
-    margin-top: 2rem;
+
+.input-group button#eyes:focus {
+    border: none;
+    outline: none;
+}
+
+
+.login-body input[type=checkbox] {
+    height: 11px;
+    width: 11px;
+}
+
+.login-body label {
+    font-size: 14px;
+}
+
+.login-body button.btn {
+    margin-top: 1.5rem;
     font-size: 19px;
     font-weight: 600;
-    word-spacing: .01rem;
 }
 
 
@@ -105,11 +157,13 @@
     LOGIN FOOTER
 ------------------------------------*/
 .login-footer {
-    padding-top: .750rem;
+    padding-top: .75rem;
+    padding-bottom: .75rem;
     border-width: 1px 0 0 0;
     border-radius: 0;
     border-style: solid;
-    border-color: #aaa
+    border-color: #aaaaaa;
+    font-size: 16px;
 }
 .login-footer a {
     font-weight: 750;

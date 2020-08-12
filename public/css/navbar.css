@@ -7,12 +7,12 @@
     padding: 0.75rem;
     font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: 0.90rem;
-    color: #000;
+    color: #252525;
     text-transform: uppercase;
     border: 0;
 }
 #mainNav .navbar-brand {
-    color: #fff;
+    color: #ffffff;
     font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-weight: 700;
     letter-spacing: 0.0625em;
@@ -25,7 +25,7 @@
     font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: 0.95rem;
     letter-spacing: 0.0625em;
-    transition: color 0.25s;
+    transition: color 100ms;
 }
 #mainNav .navbar-nav .nav-item .nav-link:hover:not(.nav-btn) {
     color: #ff0077;
@@ -42,25 +42,25 @@
         transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
     }
     #mainNav a {
-        color: #fff;
+        color: #ffffff;
         transition: color 0.3s;
     }
     #mainNav .navbar-brand {
         font-size: 1.5em;
         transition: font-size 0.3s ease-in-out;
     }
-    #mainNav .navbar-brand img {
-        height: 2rem;
+    #mainNav .navbar-brand svg {
+        height: 2.5rem;
         transition: height 0.3s ease-in-out;
     }
     #mainNav.navbar-shrink {
         padding-top: 1rem;
         padding-bottom: 1rem;
-        background-color: rgba(255, 255, 255, 0.950);
+        background-color: rgba(255, 255, 255, 0.95);
         box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.250);
     }
-    #mainNav.navbar-shrink a{
-        color: #000;
+    #mainNav.navbar-shrink a {
+        color: #252525;
     }
     #mainNav .navbar-nav .nav-item .nav-btn {
         transition: all 0.35s;
@@ -68,9 +68,8 @@
     #mainNav.navbar-shrink .navbar-brand {
         font-size: 1.25em;
     }
-    #mainNav.navbar-shrink .navbar-brand svg,
-    #mainNav.navbar-shrink .navbar-brand img {
-        height: 1.5rem;
+    #mainNav.navbar-shrink .navbar-brand svg{
+        height: 1.8rem;
     }
     #mainNav .navbar-nav .nav-item {
         margin-right: 1rem;
@@ -84,7 +83,7 @@
         box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.250);
     }
     #mainNav a {
-        color: #000;
+        color: #252525;
     }
     .nav-btn{
         margin-bottom: 8px;

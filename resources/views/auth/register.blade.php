@@ -1,5 +1,65 @@
 @extends('layouts.app')
 
+@section('head_title' , 'Sign up')
+
+@section('head_css')
+<link rel="stylesheet" href="{{ asset('css/signup.css') }}">
+@endsection
+
+
+
+@section('content')
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="signup-content align-items-center">
+            <!-- --------------------   SIGN UP ((HEADER)) AREA   ------------------- -->
+            <div class="signup-header">
+
+            </div>
+
+            
+            
+            <!-- --------------------   SIGN UP ((BODY)) AREA   ------------------- -->
+            <div class="signup-body">
+
+            </div>
+
+
+
+            <!-- --------------------   SIGN UP ((BODY)) AREA   ------------------- -->
+            <div class="signup-footer">
+
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -74,4 +134,4 @@
         </div>
     </div>
 </div>
-@endsection
+@endsection -->
