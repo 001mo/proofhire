@@ -101,10 +101,6 @@
     border: none;
     color: #000000;
 }
-.form-control::placeholder{
-    color: #505050;
-    font-weight: 500;
-}
 
 .input-group .input-label {
     position: absolute;
