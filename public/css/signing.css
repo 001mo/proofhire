@@ -1,15 +1,13 @@
-.login-content {
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 7px;
-    border-color: transparent;
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap");
+
+.signing-content {
+    border: 0;
     padding: 1rem 2rem 0 2rem;
     margin: 1rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* box-shadow: 0 0 .4rem .450rem rgba(200, 200, 200, 0.4); */
 }
 @media(min-width: 340px){
-    .login-content {
+    .signing-content {
         padding-left: 20px;
         padding-right: 20px;
         min-width: 320px;
@@ -21,23 +19,24 @@
 /*------------------------------------
     LOGIN HEADER
 ------------------------------------*/
-.login-header {
-    padding-bottom: .6rem;
+.signing-header {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: .75rem;
 }
-.login-header h4 {
+.signing-header h4 {
     color: #303030;
     font-size: 32px;
-    font-family: 'Open Sans', sans-serif;
     margin-bottom: 1.250rem;
 }
-.login-header svg {
+.signing-header svg {
     height: 70px;
     width: 70px;
     margin-bottom: 1rem;
 }
 
 
-.login-header button {
+.signing-header button {
     background-color: transparent;
     font-size: 15px;
     font-weight: 500;
@@ -49,22 +48,22 @@
     outline: none;
 }
 
-.login-header button:hover {
+.signing-header button:hover {
     transform: scale(1.01);
 }
-.login-header button svg {
+.signing-header button svg {
     height: 27px;
     width: 27px;
     margin: 0;
 }
-.login-header .or {
+.signing-header .or {
     font-size: 17px;
     font-weight: 500;
-    color: #505050;
+    color: #252525;
+    top: 1rem;
     position: relative;
-    margin-top: 1rem;
 }
-.login-header .or ::before{
+.signing-header .or ::before{
     content: "";
     display: block;
     width: 44%;
@@ -74,7 +73,7 @@
     background: #aaaaaa;
     position: absolute;
 }
-.login-header .or ::after{
+.signing-header .or ::after{
     content: "";
     display: block;
     width: 44%;
@@ -89,14 +88,13 @@
 /*------------------------------------
     LOGIN BODY
 ------------------------------------*/
-.login-body {
+.signing-body {
     padding-top: .5rem;
+    text-align: center;
 }
-.login-body a {
+.signing-body a {
     font-size: 13px;
 }
-
-
 .form-control , .form-control:hover , .form-control:focus , .form-control:active {
     background-color: transparent;
     box-shadow: none;
@@ -105,48 +103,55 @@
 }
 .form-control::placeholder{
     color: #505050;
+    font-weight: 500;
 }
 
+.input-group .input-label {
+    position: absolute;
+    bottom: 6px;
+    left: 39px;
+    font-size: 17px;
+    color: #505050;
+    transition: ease-in-out 350ms , color 350ms;
+}
 
-.input-group:not(.exception) {
-    padding: 0 7px;
+.input-group {
+    padding: 5px;
+    padding-bottom: 0;
     border-width: 0 0 2px 0;
     border-style: solid;
     border-radius: 0;
-    border-color: #008cff;
-    transition: 250ms;
+    border-color: #aaaaaa;
+    transition: ease-in-out 350ms , border-color 350ms;
 }
-
-
-.input-group svg {
+.input-group span svg {
     height: 20px;
     width: 20px;
-    margin-top: 9px;
+    margin-top: 8px;
 }
 
 .input-group button#eyes {
     border: none;
     padding: 0;
-    margin: 0 0 7px 0;
+    margin: 0 0 8px 0;
     background-color: transparent;
 }
 
 .input-group button#eyes:focus {
-    border: none;
     outline: none;
 }
 
 
-.login-body input[type=checkbox] {
+.signing-body input[type=checkbox] {
     height: 11px;
     width: 11px;
 }
 
-.login-body label {
+.signing-body label {
     font-size: 14px;
 }
 
-.login-body button.btn {
+.signing-body button.btn {
     margin-top: 1.5rem;
     font-size: 19px;
     font-weight: 600;
@@ -156,7 +161,7 @@
 /*------------------------------------
     LOGIN FOOTER
 ------------------------------------*/
-.login-footer {
+.signing-footer {
     padding-top: .75rem;
     padding-bottom: .75rem;
     border-width: 1px 0 0 0;
@@ -164,8 +169,9 @@
     border-style: solid;
     border-color: #aaaaaa;
     font-size: 16px;
+    text-align: center;
 }
-.login-footer a {
+.signing-footer a {
     font-weight: 750;
     font-size: 18px;
     word-spacing: 0.05rem;
@@ -195,15 +201,16 @@ footer a:hover {
 
 footer .terms li {
     display: inline;
+    box-sizing: border-box;
 }
 footer .terms li:not(:last-child) {
     border-width: 0 1px 0 0;
     border-color: #707070;
     border-style: solid;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    padding-left: 8px;
+    padding-right: 6px;
 }
 .footer .terms li:last-child {
-    padding-left: 0.5rem;
+    padding-left: 6px;
     padding-right: 0;
 }
