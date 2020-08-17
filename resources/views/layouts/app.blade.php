@@ -10,6 +10,10 @@
     
     <!-- Font Awesome icons -->
     <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+    <!------------------------------------ CDN Bootstrap core JS ----------------------------------------->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!------------------------------------------ CDN Third party plugin JS ----------------------------------->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     @yield('head_javascript')
     
     <!-- Google fonts-->
@@ -37,11 +41,6 @@
     @yield('footer')
 
 
-
-    <!------------------------------------ CDN Bootstrap core JS ----------------------------------------->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!------------------------------------------ CDN Third party plugin JS ----------------------------------->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
  
     <!------------------------------------ Local React JS and React Dom ------------------------------------->
     <script src="js/app.js"></script>
