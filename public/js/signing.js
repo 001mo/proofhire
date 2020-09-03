@@ -1,75 +1,126 @@
-$(document).ready(function (){
+// FOCUS AFFACTION ==============
+var 
+form_control = document.querySelectorAll('input.form-control, #eyes'),
+input_label_focused = 'input-label-focused',
+input_group_focused = 'input-group-focused';
 
-    // ------------------------- INPUTS EFFECTS AREA -------------------------
-    const input_control = $('.form-control , button#eyes').not('button[type=submit] , [type=submit]');
-    const input_label = 'span.input-label';
-    const input_label_focused = 'input-label-focused';
-    const input_group_focused = 'input-group-focused';
-    
 
-    function input_event (input, event_happend){
-        switch (event_happend) {
-            case 'focus':
-                input.parent().addClass(input_group_focused);
-                input.parent().children(input_label).addClass(input_label_focused);
-                break;
+// =========== EMAIL VALIDATION ==========
+var email = document.getElementById('email'),
+invalid_email = document.getElementById('invalid-email');
 
-            case 'blur':
-                input.parent().removeClass(input_group_focused);
-                input.parent().children(input_label).removeClass(input_label_focused);
-                break;
+if(email.value !== '' ){
+    this.parentElement.children[1].classList.add(input_label_focused);
+    this.parentElement.classList.add(input_group_focused);
+}
 
-            case 'hover':
-                input.parent().addClass(input_group_focused);
-                break;
+email.onfocus = function(){
+    this.parentElement.children[1].classList.add(input_label_focused);
+    this.parentElement.classList.add(input_group_focused);
+}
+ 
+ email.onblur = function(){
+    'use strict';
 
-            default:
-                console.log('input_event() unexpected this parameter value ' +'"'+event_happend+'"');
-                break;
-        }
+    switch(email.value){
+        case '':
+            this.parentElement.parentElement.classList.add('form-group-error');
+            this.parentElement.children[1].classList.remove(input_label_focused);
+            this.parentElement.classList.remove(input_group_focused);
+            
+            this.parentElement.children[1].classList.add('text-danger');
+            this.parentElement.classList.add('border-danger');
+        
+            invalid_email.classList.remove('opacity-0');
+            break;
+        default:
+            this.parentElement.parentElement.classList.remove('form-group-error');
+            this.parentElement.children[1].classList.remove('text-danger');
+            this.parentElement.classList.remove('border-danger');
+
+            invalid_email.classList.add('opacity-0');
+            return true;
+    }
+}
+
+if(email.value === '' || invalid_email.classList.contains('opacity-0')){
+    email.onkeydown = function(){
+        this.parentElement.parentElement.classList.remove('form-group-error');
+        this.parentElement.children[1].classList.remove('text-danger');
+        this.parentElement.classList.remove('border-danger');
+
+        invalid_email.classList.add('opacity-0');
+        return true;
+    }
+}
+
+
+
+// ============================ PASSWORD AFFECTION & VISIBILTY BUTTON ===============================
+var
+password = document.getElementById('password'),
+eyes = document.querySelector('button#eyes'),
+eye = document.getElementById('eye'),
+eye_slash = document.getElementById('eye-slash');
+
+eyes.onclick = function(){
+    if(password.type === 'password' || eye.classList.contains('display-none')){
+        password.setAttribute('type', 'text');
+        eye_slash.classList.add('display-none');
+        eye.classList.remove('display-none');
     }
 
-    input_control.focus(function (){
-        input_event($(this), 'focus');
-    });
+    else{
+        password.setAttribute('type', 'password');
+        eye.classList.add('display-none');
+        eye_slash.classList.remove('display-none');
+    }
+}
 
+if(password.value !== ''){
+    this.parentElement.children[1].classList.add(input_label_focused);
+    this.parentElement.classList.add(input_group_focused);   
+}
 
-    input_control.blur(function (){
-        if($(this).not('button#eyes').val() === ''){
-            input_event($(this), 'blur');
-        }
+password.onfocus = function(){
+    this.parentElement.children[1].classList.add(input_label_focused);
+    this.parentElement.classList.add(input_group_focused);
+}
 
-        else if($('button#eyes').parent().children('input#password').val() === ''){
-            input_event($(this), 'blur');
-        }
+invalid_password = document.getElementById('invalid-password');
 
-        else {
-            return false;
-        }
-    });
+eyes,password.onblur = function(){
+    switch(password.value){
+        case '':
+            password.parentElement.parentElement.classList.add('form-group-error');
+            password.parentElement.children[1].classList.remove(input_label_focused);
+            password.parentElement.classList.remove(input_group_focused);
+            
+            password.parentElement.children[1].classList.add('text-danger');
+            password.parentElement.classList.add('border-danger');
 
-    // AUTO FOCUS ON FIRST INPUT
-    $('form :input:enabled:visible:first').focus();
+            invalid_password.classList.remove('opacity-0');
+            break;
+        default:
+            password.parentElement.parentElement.classList.remove('form-group-error');
+            password.parentElement.children[1].classList.remove('text-danger');
+            password.parentElement.classList.remove('border-danger');
 
+            invalid_password.classList.add('opacity-0');
 
+            return true;
 
-    // -------------------------- BUTTON OF PASSWORD VISIBILITY --------------------
-    const password = $("#password"); // PSSWORD INPUT
-    const eyes = $("#eyes"); // BUTTON CONTAIN THE BOTH OF EYES
-    const eye = $("#eye"); // EYE SVG 'HIDDEN'
-    const eye_slash = $("#eye-slash"); // EYE SLASH SVG
+    }
+}
 
-    eyes.click(function () {
-        if(password.attr("type") == "password"){
-            password.attr("type" , "text");
-            eye_slash.addClass("display-none");
-            eye.show();
-        }
+if(password.value === '' || invalid_password.classList.contains('opacity-0')){
+    password.onkeydown = function(){
+        password.parentElement.parentElement.classList.remove('form-group-error');
+        password.parentElement.children[1].classList.remove('text-danger');
+        password.parentElement.classList.remove('border-danger');
 
-        else {
-            password.attr("type" , "password");
-            eye.hide();
-            eye_slash.removeClass("display-none");
-        }
-    });
-});
+        invalid_password.classList.add('opacity-0');
+    }
+}
+
+form_control[0].focus();
