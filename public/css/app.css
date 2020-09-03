@@ -388,11 +388,23 @@ h6, .h6 {
 }
 
 .display-none {
-  display: none;
+  display: none !important;
 }
 
 .display-inline {
-  display: inline;
+  display: inline !important;
+}
+
+.display-block {
+  display: block !important;
+}
+
+.opacity-0 {
+  opacity: 0 !important;
+}
+
+.opacity-1 {
+  opacity: 1;
 }
 
 hr {
@@ -10166,13 +10178,6 @@ img::-moz-selection {
 /*-----------------------------------------------
   FOOTER
 -----------------------------------------------*/
-@media(min-width: 768px){
-  #mainContainer {
-    min-height: calc(100vh - 471.125px);
-  }
-}
-
-
 .page-footer {
   padding-top: 2rem;
   background-color: #000000;
@@ -10298,5 +10303,6 @@ img::-moz-selection {
 
 .page-footer .copyright {
   font-size: 14px;
+  font-weight: 500;
   color: #828282;
 }
