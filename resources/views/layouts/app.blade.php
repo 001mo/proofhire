@@ -9,9 +9,11 @@
 
     
     <!-- Font Awesome icons -->
-    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script> -->
+
     <!------------------------------------ CDN Bootstrap core JS ----------------------------------------->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <!------------------------------------------ CDN Third party plugin JS ----------------------------------->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     @yield('head_javascript')
@@ -23,19 +25,17 @@
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet" type="text/css" />
     @yield('head_fonts')
 
-    <title>{{ __('Proof Hire') }} |  @yield('head_title')</title>
+    @yield('head_title')
 
-    <!-- Core theme CSS (includes Bootstrap)-->
+    <!-------------- Core theme CSS (includes Bootstrap)-------------->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
     @yield('head_css')
 </head>
-<body id="top"><!-- oncontextmenu="return false;" -->
-    <div id="mainContainer">
-        @yield('navbar')
-        
-        
-        @yield('content')
-    </div>
+<body id="top">
+    @yield('navbar')
+    
+    
+    @yield('content')
 
 
     @yield('footer')
