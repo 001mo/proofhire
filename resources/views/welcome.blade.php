@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
-@section('head_title','welocme screen')
+@section('head_title')
+<title>not yet</title>
 
 @section('head_css')
 <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
@@ -111,9 +112,11 @@
                 </ul>
             </div>
 
+
             <hr class="bg-white clearfix w-100 d-md-none">
 
-            <div class="column col-md-4 mx-auto">
+
+            <div class="column col-md-4 mx-auto justify-content-start">
 
                 <div class="brand-logo mb-5 col-md-12 text-center">
                     <a href="{{ url('/') }}">
