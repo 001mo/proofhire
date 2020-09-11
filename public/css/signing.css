@@ -1,10 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap");
-
 .signing-content {
     border: 0;
-    padding: 1rem 2rem 0 2rem;
-    margin: 3rem 1rem 1.5rem 1rem;
+    padding: 0 2rem 0 2rem;
+    margin: 5rem 1rem 1.5rem 1rem;
     font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
 }
 @media(min-width: 340px){
     .signing-content {
@@ -25,7 +24,7 @@
 }
 .signing-header h4 {
     color: #002333;
-    font-size: 28px;
+    font-size: 30px;
     margin-bottom: 1.250rem;
 }
 .signing-header svg {
@@ -46,7 +45,6 @@
     transition: 250ms;
     outline: none;
 }
-
 .signing-header button:hover {
     box-shadow: 0 0 .4rem .2rem rgba(0, 35, 51, .2);
 }
@@ -55,6 +53,8 @@
     width: 27px;
     margin: 0;
 }
+
+
 .signing-header .or {
     font-size: 17px;
     font-weight: 600;
@@ -91,23 +91,16 @@
     padding-top: 1.5rem;
     font-size: 13px;
 }
- 
-.signing-body a {
-    font-size: inherit;
-}
+
 
 .form-group {
     position: relative;
-    transition: all 300ms;
+    transition: all 250ms;
 }
-
 .form-group.has-input {
-    margin-bottom: 0;
-}
-
-.form-group-error {
-    margin-bottom: 1.3rem !important;
-}
+    padding-bottom: 1.25rem;
+    margin-bottom: 1rem;
+} 
 
 .form-control , .form-control:hover , .form-control:focus , .form-control:active {
     padding-top: 3px;
@@ -118,8 +111,6 @@
     color: #000000;
     font-size: 14px;
 }
-
-
 input:-webkit-autofill ,
 input:-webkit-autofill:hover , 
 input:-webkit-autofill:focus ,
@@ -129,59 +120,60 @@ input:-webkit-autofill:active {
     transition: all 0s;
 }
 
+
 .input-group .input-label {
     position: absolute;
     bottom: 7px;
     left: 37px;
     color: #5c5c5c;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 100;
-    transition: ease-in-out 350ms ;
+    transition: ease-in-out 300ms, color 250ms;
 }
-
 .input-group .input-label-focused {
-    bottom: 36px;
-    left: 5px;
+    bottom: 32px;
+    left: 0;
     color: #008cff;
     font-size: 12px;
-    font-family: 'Roborto', sans-serif;
+    font-weight: 200;
 }
 
+
 .input-group {
-    padding: 5px;
-    padding-bottom: 1px;
-    margin-bottom: .750rem;
+    padding: 5px 5px 1px 5px;
     border-width: 0 0 1px 0;
     border-style: solid;
     border-radius: 0;
     border-color: #5c5c5c;
-    transition: all 350ms;
+    transition: all 250ms;
 }
-
 .input-group-focused {
     border-width: 0 0 2px 0;
     border-color: #008cff;
     padding-bottom: 0;
 }
-
-span.invalid-message {
-    color: #dc3545;
-    font-size: 13px;
-    transition:  all 300ms;
-}
-
-span.invalid-message svg {
-    width: 17px;
-    height: 17px;
-    margin-right: 5px;
-    margin-bottom: 4px;
-}
-
 .input-group span svg {
     height: 20px;
     width: 20px;
     margin-top: 7px;
 }
+
+
+.invalid-message {
+    position: absolute;
+    left: 7px;
+    bottom: -0.25rem;
+    color: #dc3545;
+    font-size: 12px;
+    transition:  all 300ms;
+}
+.invalid-message .err-sign{
+    width: 20px;
+    height: 20px;
+    margin-right: 7px;
+    margin-bottom: 2px;
+}
+
 
 .input-group button#eyes {
     border: none;
@@ -195,14 +187,12 @@ span.invalid-message svg {
 }
 
 
-.signing-body input[type=checkbox] {
+.signing-body input#remember {
     height: 11px;
     width: 11px;
-    cursor: pointer;
 }
 
 .signing-body button.btn {
-    margin-top: 1.5rem;
     font-size: 19px;
     font-weight: 500;
 }
@@ -227,18 +217,18 @@ span.invalid-message svg {
 }
 
 
-/*------------------------------------
+/*-------------------------------------------------------
     PAGE FOOTER
-------------------------------------*/
+-------------------------------------------------------*/
 footer {
     padding-top: 2rem;
     font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
 }
 footer a {
     color: #707070;
-    font-size: 15px;
-    font-weight: 700;
-    letter-spacing: 0.050rem;
+    font: inherit;
 }
 footer a:hover {
     text-decoration: none;
