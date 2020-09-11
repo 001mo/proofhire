@@ -192,6 +192,7 @@ th {
 label {
   display: inline-block;
   margin-bottom: 0.5rem;
+  cursor: pointer;
 }
 
 button {
@@ -10188,6 +10189,7 @@ img::-moz-selection {
   letter-spacing: 0.050rem;
   color: #cecece;
   font-size: 14px;
+  transition: all 0ms;
 }
 .page-footer a:hover {
   text-decoration: none;
@@ -10223,6 +10225,7 @@ img::-moz-selection {
 
 .page-footer .social-media h3 {
   color: #ffffff;
+  font-size: 25px;
 }
 
 @media(max-width: 373px){
@@ -10249,7 +10252,7 @@ img::-moz-selection {
   width: 28px;
   height: 28px;
   margin: 0 0.55rem;
-  vertical-align: text-top;
+  /* vertical-align: text-top; */
   transition: 0.35s;
 }
 .page-footer .social-media svg:hover {
