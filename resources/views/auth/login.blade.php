@@ -1,11 +1,12 @@
 @extends('layouts.app')
 
 @section('head_title')
-<title>{{ __('Login - proofhire') }}</title>
+<title>{{ __('Login | proofhire') }}</title>
 @endsection
 
+
 @section('head_css')
-<link rel="stylesheet" href="{{ URL::asset('css/signing.css')}}" />
+<link rel="stylesheet" href="{{ asset('css/signing.css')}}" />
 @endsection
 
 
@@ -115,58 +116,23 @@
                             </span>
 
                             <span class="input-label">{{ __('Email or username') }}</span>
-                            <input id="email" type="email" name="email" class="form-control @error('email') invalid @enderror" value="{{ old('email') }}" required autocomplete="email">
+                            <input id="email" type="email" name="email" class="form-control" value="{{ old('email') }}" required="off" autocomplete="email">
                         </div>
-                        <span id="invalid-email" class="invalid-message opacity-0">
-                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                viewBox="0 0 286.054 286.054" style="enable-background:new 0 0 286.054 286.054;" xml:space="preserve">
-                                <g>
-                                    <path style="fill:#dc3545;" d="M143.027,0C64.04,0,0,64.04,0,143.027c0,78.996,64.04,143.027,143.027,143.027
-                                        c78.996,0,143.027-64.022,143.027-143.027C286.054,64.04,222.022,0,143.027,0z M143.027,259.236
-                                        c-64.183,0-116.209-52.026-116.209-116.209S78.844,26.818,143.027,26.818s116.209,52.026,116.209,116.209
-                                        S207.21,259.236,143.027,259.236z M143.036,62.726c-10.244,0-17.995,5.346-17.995,13.981v79.201c0,8.644,7.75,13.972,17.995,13.972
-                                        c9.994,0,17.995-5.551,17.995-13.972V76.707C161.03,68.277,153.03,62.726,143.036,62.726z M143.036,187.723
-                                        c-9.842,0-17.852,8.01-17.852,17.86c0,9.833,8.01,17.843,17.852,17.843s17.843-8.01,17.843-17.843
-                                        C160.878,195.732,152.878,187.723,143.036,187.723z"/>
-                                </g>
-                                <g>
-                                </g>
-                                <g>
-                                </g>
-                                <g>
-                                </g>
-                                <g>
-                                </g>
-                                <g>
-                                </g>
-                                <g>
-                                </g>
-                                <g>
-                                </g>
-                                <g>
-                                </g>
-                                <g>
-                                </g>
-                                <g>
-                                </g>
-                                <g>
-                                </g>
-                                <g>
-                                </g>
-                                <g>
-                                </g>
-                                <g>
-                                </g>
-                                <g>
-                                </g>
-                            </svg>
-                            This field is required
-                        </span>
+                        @error('email')
+                        <div class="invalid-message">
+                            <span class="err-sign">
+                                <i class="fas fa-exclamation-circle"></i>
+                            </span>
+                            <span class="err-message">
+                                {{ $message }}
+                            </span>
+                        </div>
+                        @enderror
                     </div>
 
 
                     <div class="form-group has-input">
-                        <div id="inputgroup" class="input-group flex-nowrap">
+                        <div class="input-group flex-nowrap">
                             <span>
                                 <svg focusable="false" viewBox="0 0 448 512">
                                     <path fill="#404040"
@@ -176,7 +142,7 @@
                             </span>
 
                             <span class="input-label">{{ _('Password') }}</span>
-                            <input id="password" type="password" name="password" class="form-control" required autocomplete="current-password">
+                            <input id="password" type="password" name="password" class="form-control" required="none" autocomplete="current-password">
                             
                             <button type="button" id="eyes">
                                 <span id="eye-slash">
@@ -196,78 +162,46 @@
                                 </span>
                             </button>
                         </div>
-                        <span id="invalid-password" class="invalid-message opacity-0">
-                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                viewBox="0 0 286.054 286.054" style="enable-background:new 0 0 286.054 286.054;" xml:space="preserve">
-                                <g>
-                                    <path style="fill:#dc3545;" d="M143.027,0C64.04,0,0,64.04,0,143.027c0,78.996,64.04,143.027,143.027,143.027
-                                        c78.996,0,143.027-64.022,143.027-143.027C286.054,64.04,222.022,0,143.027,0z M143.027,259.236
-                                        c-64.183,0-116.209-52.026-116.209-116.209S78.844,26.818,143.027,26.818s116.209,52.026,116.209,116.209
-                                        S207.21,259.236,143.027,259.236z M143.036,62.726c-10.244,0-17.995,5.346-17.995,13.981v79.201c0,8.644,7.75,13.972,17.995,13.972
-                                        c9.994,0,17.995-5.551,17.995-13.972V76.707C161.03,68.277,153.03,62.726,143.036,62.726z M143.036,187.723
-                                        c-9.842,0-17.852,8.01-17.852,17.86c0,9.833,8.01,17.843,17.852,17.843s17.843-8.01,17.843-17.843
-                                        C160.878,195.732,152.878,187.723,143.036,187.723z"/>
-                                </g>
-                                <g>
-                                </g>
-                                <g>
-                                </g>
-                                <g>
-                                </g>
-                                <g>
-                                </g>
-                                <g>
-                                </g>
-                                <g>
-                                </g>
-                                <g>
-                                </g>
-                                <g>
-                                </g>
-                                <g>
-                                </g>
-                                <g>
-                                </g>
-                                <g>
-                                </g>
-                                <g>
-                                </g>
-                                <g>
-                                </g>
-                                <g>
-                                </g>
-                                <g>
-                                </g>
-                            </svg>
-                            This field is required
-                        </span>
+                        @error('password')
+                        <div class="invalid-message">
+                            <span class="err-sign">
+                                <i class="fas fa-exclamation-circle"></i>
+                            </span>
+                            <span class="err-message">
+                                {{ $message }}
+                            </span>
+                        </div>
+                        @enderror
                     </div>
 
 
-                    <div class="form-group row justify-content-between mx-0 px-0">
-                        <div class="text-left">
+                    <div class="form-group w-100">
+                        <span class="text-left">
                             <input type="checkbox" name="remember" id="remember">
                             <label for="remember">{{ __('Keep me signed!') }}</label>
-                        </div>
+                        </span>
 
                         @if (Route::has('password.request'))
-                        <div classs="text-right">
+                        <span class="text-right">
                             <a href="{{ route('password.request') }}">
-                                {{ __('Forgot Your Password?') }}
+                                {{ __('Forgot your password?') }}
                             </a>
-                        </div>
+                        </span>
                         @endif
                     </div>
 
 
-                    <div class="form-group text-center">
-                        <button id="submit" type="submit" class="btn btn-info btn-block" disabled>{{ __('Login') }}</button>
+                    <div class="form-group">
+                        <button id="submit" type="submit" class="btn btn-info btn-block">{{ __('Login') }}</button>
                     </div>
                 </form>
             </div>
 
-            <div class="signing-footer text-center">
-                <p>{{ __('Not member a yet ? ') }}<a class="a-border" href="{{ url('register') }}">{{ __('Sign up') }}</a></p>
+            <div class="signing-footer">
+                <div>
+                    {{ __('Not a member yet ? ') }}
+                    <a class="a-border" href="{{ url('register') }}">{{ __('Sign up') }}</a>
+                </div>
             </div>
         </div>
     </div>
