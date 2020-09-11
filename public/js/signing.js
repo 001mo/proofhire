@@ -1,126 +1,153 @@
-// FOCUS AFFACTION ==============
-var 
-form_control = document.querySelectorAll('input.form-control, #eyes'),
-input_label_focused = 'input-label-focused',
-input_group_focused = 'input-group-focused';
+/////////// input affection
+function inputAction(input, action, input_group, input_label){
+    switch(action){
+        case 'add':
+            if(!input.parentElement.classList.contains(input_group)){
+                input.parentElement.classList.add(input_group);
+            }
+            if(!input.parentElement.children[1].classList.contains(input_label)){
+                input.parentElement.children[1].classList.add(input_label);
+            }
+            break;
+        case 'remove':
+            if(input.parentElement.classList.contains(input_group)){
+                input.parentElement.classList.remove(input_group);
+            }
+            if(input.parentElement.children[1].classList.contains(input_label)){
+                input.parentElement.children[1].classList.remove(input_label);
+            }
+            break;
+        default:
+            console.log('inputAction unexpected '+'"'+action+'"'+' parameter');
+            break;
+    }
+}
 
 
-// =========== EMAIL VALIDATION ==========
-var email = document.getElementById('email'),
-invalid_email = document.getElementById('invalid-email');
 
-if(email.value !== '' ){
-    this.parentElement.children[1].classList.add(input_label_focused);
-    this.parentElement.classList.add(input_group_focused);
+function validationMessage(input, message){
+    if(input.parentElement.parentElement.children.length > 1){
+        return false;
+    }
+    else{
+        var invalid_message = document.createElement('div');
+        invalid_message.className = 'invalid-message';
+    
+        var err_sign = document.createElement('span');
+        err_sign.className = 'err-sign';
+    
+        var err_icon = document.createElement('i');
+        err_icon.className = 'fas fa-exclamation-circle';
+        err_sign.appendChild(err_icon);
+    
+        var err_message =  document.createElement('span');
+        err_message.className = 'err-message';
+        err_message_node = document.createTextNode(message);
+        err_message.appendChild(err_message_node);
+    
+        invalid_message.appendChild(err_sign);
+        invalid_message.appendChild(err_message);
+        input.parentElement.parentElement.appendChild(invalid_message);
+    }
+}
+
+function hideValidationMessage(input){
+    if(input.parentElement.parentElement.children.length > 1){
+        if(input.parentElement.parentElement.children[1].classList.contains('invalid-message')){
+            input.parentElement.parentElement.children[1].classList.add('opacity-0');
+            setTimeout(() => {
+                if(input.parentElement.parentElement.children.length > 1){
+                    if(input.parentElement.parentElement.children[1].classList.contains('invalid-message')){
+                        input.parentElement.parentElement.children[1].remove();
+                    }
+                }
+            }, 300);
+        }
+    }
+    else{
+        return false;
+    }
+}
+
+
+
+
+// Email effections
+const email = document.getElementById('email');
+
+if(email.value !== ''){
+    inputAction(email, 'add', 'input-group-focused', 'input-label-focused');
 }
 
 email.onfocus = function(){
-    this.parentElement.children[1].classList.add(input_label_focused);
-    this.parentElement.classList.add(input_group_focused);
-}
- 
- email.onblur = function(){
     'use strict';
+    inputAction(this, 'add', 'input-group-focused', 'input-label-focused');
+}
 
-    switch(email.value){
-        case '':
-            this.parentElement.parentElement.classList.add('form-group-error');
-            this.parentElement.children[1].classList.remove(input_label_focused);
-            this.parentElement.classList.remove(input_group_focused);
-            
-            this.parentElement.children[1].classList.add('text-danger');
-            this.parentElement.classList.add('border-danger');
-        
-            invalid_email.classList.remove('opacity-0');
-            break;
-        default:
-            this.parentElement.parentElement.classList.remove('form-group-error');
-            this.parentElement.children[1].classList.remove('text-danger');
-            this.parentElement.classList.remove('border-danger');
-
-            invalid_email.classList.add('opacity-0');
-            return true;
+email.onblur = function(){
+    'use strict';
+    if(this.value === ''){
+        inputAction(email, 'remove', 'input-group-focused', 'input-label-focused');
+        inputAction(email, 'add', 'border-danger', 'text-danger');
+        validationMessage(email, 'This feild is required');
     }
 }
 
-if(email.value === '' || invalid_email.classList.contains('opacity-0')){
-    email.onkeydown = function(){
-        this.parentElement.parentElement.classList.remove('form-group-error');
-        this.parentElement.children[1].classList.remove('text-danger');
-        this.parentElement.classList.remove('border-danger');
-
-        invalid_email.classList.add('opacity-0');
-        return true;
-    }
+email.onkeydown = function(){
+    'use strict';
+    inputAction(this, 'remove', 'border-danger', 'text-danger');
+    hideValidationMessage(this);
 }
 
 
 
-// ============================ PASSWORD AFFECTION & VISIBILTY BUTTON ===============================
+// password effection
+const password = document.getElementById('password');
+
+if(password.value !== ''){
+    inputAction(password, 'add', 'input-group-focused', 'input-label-focused');
+}
+    
+password.onfocus = function(){
+    'use strict';
+    inputAction(this, 'add', 'input-group-focused', 'input-label-focused');
+}
+
+password.onblur = function(){
+    'use strict';
+    if(this.value === ''){
+        inputAction(password, 'remove', 'input-group-focused', 'input-label-focused');
+        inputAction(password, 'add', 'border-danger', 'text-danger');
+        validationMessage(password, 'This field is required');
+    }
+}
+
+password.onkeydown = function(){
+    'use strict';
+    inputAction(this, 'remove', 'border-danger', 'text-danger');
+    hideValidationMessage(this);
+}
+
+
+
+///////// password visibility
 var
-password = document.getElementById('password'),
-eyes = document.querySelector('button#eyes'),
+eyes = document.getElementById('eyes'),
 eye = document.getElementById('eye'),
 eye_slash = document.getElementById('eye-slash');
 
 eyes.onclick = function(){
-    if(password.type === 'password' || eye.classList.contains('display-none')){
-        password.setAttribute('type', 'text');
+    if(password.type === 'password' && eye.classList.contains('display-none')){
+        password.type = 'text';
         eye_slash.classList.add('display-none');
         eye.classList.remove('display-none');
     }
-
     else{
-        password.setAttribute('type', 'password');
-        eye.classList.add('display-none');
+        password.type = 'password';
         eye_slash.classList.remove('display-none');
+        eye.classList.add('display-none');
     }
 }
 
-if(password.value !== ''){
-    this.parentElement.children[1].classList.add(input_label_focused);
-    this.parentElement.classList.add(input_group_focused);   
-}
 
-password.onfocus = function(){
-    this.parentElement.children[1].classList.add(input_label_focused);
-    this.parentElement.classList.add(input_group_focused);
-}
-
-invalid_password = document.getElementById('invalid-password');
-
-eyes,password.onblur = function(){
-    switch(password.value){
-        case '':
-            password.parentElement.parentElement.classList.add('form-group-error');
-            password.parentElement.children[1].classList.remove(input_label_focused);
-            password.parentElement.classList.remove(input_group_focused);
-            
-            password.parentElement.children[1].classList.add('text-danger');
-            password.parentElement.classList.add('border-danger');
-
-            invalid_password.classList.remove('opacity-0');
-            break;
-        default:
-            password.parentElement.parentElement.classList.remove('form-group-error');
-            password.parentElement.children[1].classList.remove('text-danger');
-            password.parentElement.classList.remove('border-danger');
-
-            invalid_password.classList.add('opacity-0');
-
-            return true;
-
-    }
-}
-
-if(password.value === '' || invalid_password.classList.contains('opacity-0')){
-    password.onkeydown = function(){
-        password.parentElement.parentElement.classList.remove('form-group-error');
-        password.parentElement.children[1].classList.remove('text-danger');
-        password.parentElement.classList.remove('border-danger');
-
-        invalid_password.classList.add('opacity-0');
-    }
-}
-
-form_control[0].focus();
+document.querySelectorAll('input.form-control')[0].focus();
