@@ -95,8 +95,16 @@ email.onblur = function(){
 
 email.onkeydown = function(){
     'use strict';
-    inputAction(this, 'remove', 'border-danger', 'text-danger');
-    hideValidationMessage(this);
+    this.onkeyup = function(){
+        if(this.value !== ''){
+            inputAction(this, 'remove', 'border-danger', 'text-danger');
+            hideValidationMessage(this);
+        }
+        else{
+            inputAction(this, 'add', 'border-danger', 'text-danger');
+            validationMessage(this, 'You know this field is required');
+        }
+    }
 }
 
 
@@ -124,8 +132,16 @@ password.onblur = function(){
 
 password.onkeydown = function(){
     'use strict';
-    inputAction(this, 'remove', 'border-danger', 'text-danger');
-    hideValidationMessage(this);
+    this.onkeyup = function(){
+        if(this.value !== ''){
+            inputAction(this, 'remove', 'border-danger', 'text-danger');
+            hideValidationMessage(this);
+        }
+        else{
+            inputAction(this, 'add', 'border-danger', 'text-danger');
+            validationMessage(this, 'You know this field is required');
+        }
+    }
 }
 
 
